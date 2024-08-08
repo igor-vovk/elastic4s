@@ -27,6 +27,7 @@ object Dependencies {
   val Slf4jVersion                   = "2.0.13"
   val SprayJsonVersion               = "1.3.6"
   val SttpVersion                    = "3.9.7"
+  val TestContainersVersion          = "0.41.2"
   val ZIOJson1Version                = "0.1.5"
   val ZIO1Version                    = "1.0.18"
   val ZIOVersion                     = "2.1.6"
@@ -78,13 +79,14 @@ object Dependencies {
   lazy val elasticsearchRestClientSniffer = "org.elasticsearch.client" % "elasticsearch-rest-client-sniffer" %
     ElasticsearchVersion
 
-  lazy val commonsIo             = "commons-io"               % "commons-io"                   % CommonsIoVersion       % "test"
-  lazy val log4jApi              = "org.apache.logging.log4j" % "log4j-api"                    % Log4jVersion           % "test"
-  lazy val mockitoCore           = "org.mockito"              % "mockito-core"                 % MockitoVersion         % "test"
-  lazy val reactiveStreamsTck    = "org.reactivestreams"      % "reactive-streams-tck"         % ReactiveStreamsVersion % "test"
-  lazy val scalaTestMain         = "org.scalatest"           %% "scalatest"                    % ScalatestVersion
+  lazy val commonsIo             = "commons-io"               % "commons-io"                     % CommonsIoVersion       % "test"
+  lazy val log4jApi              = "org.apache.logging.log4j" % "log4j-api"                      % Log4jVersion           % "test"
+  lazy val mockitoCore           = "org.mockito"              % "mockito-core"                   % MockitoVersion         % "test"
+  lazy val reactiveStreamsTck    = "org.reactivestreams"      % "reactive-streams-tck"           % ReactiveStreamsVersion % "test"
+  lazy val scalaTestMain         = "org.scalatest"           %% "scalatest"                      % ScalatestVersion
   lazy val scalaTest             = scalaTestMain % "test"
-  lazy val scalaTestPlusMokito   = "org.scalatestplus"       %% ScalatestPlusMockitoArtifactId % ScalatestPlusVersion
-  lazy val scalaTestPlusTestng67 = "org.scalatestplus"       %% "testng-6-7"                   % ScalatestPlusVersion   % "test"
+  lazy val scalaTestPlusMokito   = "org.scalatestplus"       %% ScalatestPlusMockitoArtifactId   % ScalatestPlusVersion
+  lazy val scalaTestPlusTestng67 = "org.scalatestplus"       %% "testng-6-7"                     % ScalatestPlusVersion   % "test"
+  lazy val testcontainers        = "com.dimafeng"            %% "testcontainers-scala-scalatest" % TestContainersVersion
 
 }

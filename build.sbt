@@ -225,7 +225,11 @@ lazy val testkit = (project in file("elastic4s-testkit"))
   .dependsOn(core, clientesjava)
   .settings(name := "elastic4s-testkit")
   .settings(scala3Settings)
-  .settings(libraryDependencies ++= Seq(Dependencies.scalaTestMain, scalaTestPlusMokito))
+  .settings(libraryDependencies ++= Seq(
+    Dependencies.scalaTestMain,
+    Dependencies.scalaTestPlusMokito,
+    Dependencies.testcontainers
+  ))
 
 lazy val httpstreams = (project in file("elastic4s-http-streams"))
   .dependsOn(core, testkit % "test", jackson % "test")
