@@ -16,5 +16,4 @@ runs:
     - name: 'Wait for cluster to start'
       shell: bash
       run: |
-        sleep 5 && \
-        curl -s -S --retry 5 --retry-delay 5 "http://127.0.0.1:39227/_cluster/health?wait_for_status=green&timeout=50s"
+        curl -s -S --retry 5 --retry-delay 5 --retry-all-errors "http://127.0.0.1:39227/_cluster/health?wait_for_status=green&timeout=50s"
